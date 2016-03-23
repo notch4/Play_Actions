@@ -1,0 +1,30 @@
+@(artists: Seq[Artist])
+@main("home"){
+
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(!artists.isEmpty){
+                        @artists.map{ artist =>
+                            <tr>
+                                <td>@artist.name</td>
+                                <td>@artist.country</td>
+                            </tr>
+                        }
+                    }else{
+                        <tr><td colspan="2">No Artists..</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+}

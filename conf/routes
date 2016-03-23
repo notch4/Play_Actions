@@ -3,7 +3,12 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                                   controllers.Application.index
+GET     /artists                            controllers.Application.listArtist
+GET     /artists/:name                      controllers.Application.fetchArtistByName(name)
+GET     /search/artist                      controllers.Application.search(name: String?="", country: String?="")
+GET     /search2/artist                     controllers.Application.search2(name: Option[String], country: String)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file)
